@@ -4,6 +4,9 @@ livepreview: https://justinrkinsman.github.io/RockPaperScissorsN-I/
 
 # Introduction
 
+---PLEASE NOTE---
+This project is currently being worked on and is not full functional yet.
+
 This Rock, Paper, Scissors game was one of the first projects I attempted to build. I initially built a very rudimentary version that was mostly text-based. I came back nearly a year later with the intention of making it look more profesisonal and showcasing off my CSS skills
 
 # How to play
