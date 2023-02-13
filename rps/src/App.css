@@ -45,3 +45,12 @@ button:hover {
   background-color: rgb(94, 157, 182);
   scale: 1.05
 }
+
+.scoreboard, .player1, .cpu-player {
+  display: flex;
+  flex-direction: row;
+}
+
+.scoreboard {
+  justify-content: space-around;
+}

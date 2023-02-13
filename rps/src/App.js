@@ -29,6 +29,16 @@ function App() {
             <button>Rock</button>
             <button>Paper</button>
             <button>Scissors</button>
+            <div className='scoreboard'>
+              <div className="player1">
+                <p>{name}</p>
+                <p>- 0</p> {/*replace with state userScore */}
+              </div>
+              <div className='cpu-player'>
+                <p>0 -</p> {/*replace with state cpuScore */}
+                <p>Computer</p>
+              </div>
+            </div>
           </div>
         ) : (
           <>
