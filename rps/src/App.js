@@ -5,6 +5,8 @@ function App() {
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [hasName, setHasName] = useState("");
+  const [userScore, setUserScore] = useState(0);
+  const [cpuScore, setCpuScore] = useState(0)
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -19,6 +21,14 @@ function App() {
     }
   };
 
+  const increaseUserScore = () => {
+    setUserScore(userScore + 1)
+  }
+
+  const increaseCpuScore = () => {
+    setCpuScore(cpuScore + 1)
+  }
+
   return (
     <div className="App">
       <h1>Rock Paper Scissors</h1> {
@@ -26,16 +36,16 @@ function App() {
           <div>
             <p>Welcome {name}</p>
             <p>Choose your weapon</p>
-            <button>Rock</button>
-            <button>Paper</button>
+            <button onClick={increaseUserScore}>Rock</button>
+            <button onClick={increaseCpuScore}>Paper</button>
             <button>Scissors</button>
             <div className='scoreboard'>
               <div className="player1">
                 <p>{name}</p>
-                <p>- 0</p> {/*replace with state userScore */}
+                <p>- {userScore}</p>
               </div>
               <div className='cpu-player'>
-                <p>0 -</p> {/*replace with state cpuScore */}
+                <p>{cpuScore} -</p>
                 <p>Computer</p>
               </div>
             </div>
