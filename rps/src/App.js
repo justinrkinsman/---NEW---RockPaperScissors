@@ -23,6 +23,11 @@ function App() {
     }
   };
 
+  const handleUserSelection = (event) => {
+    setUserSelection(event.target.textContent)
+    console.log(userSelection)
+  }
+
   const increaseUserScore = () => {
     setUserScore(userScore + 1)
   }
@@ -38,9 +43,9 @@ function App() {
           <div>
             <p>Welcome {name}</p>
             <p>Choose your weapon</p>
-            <button onClick={increaseUserScore}>Rock</button>
-            <button onClick={increaseCpuScore}>Paper</button>
-            <button>Scissors</button>
+            <button onClick={handleUserSelection}>Rock</button>
+            <button onClick={handleUserSelection}>Paper</button>
+            <button onClick={handleUserSelection}>Scissors</button>
             <div className='scoreboard'>
               <div className="player1">
                 <p>{name}</p>
