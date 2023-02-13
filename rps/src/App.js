@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [name, setName] = useState("");
@@ -28,12 +28,24 @@ function App() {
     handleCpuSelection()
   }
 
+  /*useEffect(() => {
+    if (userSelection) {
+      handleCpuSelection();
+    }
+  }, [userSelection])*/
+
   const handleCpuSelection = () => {
     const options = ["Rock", "Paper", "Scissors"]
     const randomSelection = options[Math.floor(Math.random() * options.length)]
     setCpuSelection(randomSelection)
     compareSelections()
   }
+
+  /*useEffect(() => {
+    if (cpuSelection) {
+      compareSelections();
+    }
+  }, [cpuSelection])*/
 
   const compareSelections = () => {
     const results = {
