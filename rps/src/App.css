@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .App-header {
@@ -34,6 +38,7 @@ button {
   border: 0px;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 40px;
 }
 
 button:hover {
