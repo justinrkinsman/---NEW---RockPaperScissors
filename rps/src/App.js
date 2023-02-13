@@ -25,7 +25,18 @@ function App() {
 
   const handleUserSelection = (event) => {
     setUserSelection(event.target.textContent)
-    console.log(userSelection)
+    handleCpuSelection()
+  }
+
+  const handleCpuSelection = () => {
+    const options = ["Rock", "Paper", "Scissors"]
+    const randomSelection = options[Math.floor(Math.random() * options.length)]
+    setCpuSelection(randomSelection)
+    compareSelections()
+  }
+
+  const compareSelections = () => {
+    console.log(`${userSelection} vs. ${cpuSelection}`)
   }
 
   const increaseUserScore = () => {
