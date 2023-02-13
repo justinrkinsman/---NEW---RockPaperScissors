@@ -24,7 +24,8 @@ function App() {
       <h1>Rock Paper Scissors</h1> {
         hasName ? (
           <div>
-            <p>Choose:</p>
+            <p>Welcome {name}</p>
+            <p>Choose your weapon</p>
             <button>Rock</button>
             <button>Paper</button>
             <button>Scissors</button>
