@@ -14,8 +14,8 @@ Select between Rock, Paper, or Scissors.
 
 # Winning Conditions:
 
-PAPER beats ROCK
-ROCK beats SCISSORS
+PAPER beats ROCK  
+ROCK beats SCISSORS  
 SCISSORS beats ROCK
 
 If your guess beats the computer's guess, you win. First to win five rounds wins the game.
