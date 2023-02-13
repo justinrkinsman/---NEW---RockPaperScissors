@@ -36,7 +36,21 @@ function App() {
   }
 
   const compareSelections = () => {
-    console.log(`${userSelection} vs. ${cpuSelection}`)
+    const results = {
+      Rock: { Rock: "Draw", Paper: "Loss", Scissors: "Win" },
+      Paper: { Rock: "Win", Paper: "Draw", Scissors: "Loss" },
+      Scissors: { Rock: "Loss", Paper: "Win", Scissors: "Draw" },
+    };
+
+    if (results[userSelection][cpuSelection] === "Win") {
+      increaseUserScore()
+    }
+    if (results[userSelection][cpuSelection] === "Loss") {
+      increaseCpuScore()
+    }
+    if (results[userSelection][cpuSelection] === "Draw") {
+      console.log("Draw")
+    }
   }
 
   const increaseUserScore = () => {
