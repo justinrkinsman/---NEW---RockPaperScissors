@@ -6,7 +6,9 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [hasName, setHasName] = useState("");
   const [userScore, setUserScore] = useState(0);
-  const [cpuScore, setCpuScore] = useState(0)
+  const [cpuScore, setCpuScore] = useState(0);
+  const [userSelection, setUserSelection] = useState('')
+  const [cpuSelection, setCpuSelection] = useState('')
 
   const handleNameChange = (event) => {
     setName(event.target.value);
