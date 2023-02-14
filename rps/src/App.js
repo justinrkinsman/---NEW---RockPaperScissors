@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback} from 'react';
 
 function App() {
   const [name, setName] = useState("");
@@ -47,31 +47,26 @@ function App() {
     }
   }, [cpuSelection])*/
 
-  const compareSelections = () => {
-    const results = {
+  const compareSelections = useCallback(() => {
+    if (userSelection && cpuSelection) {
+      const results = {
       Rock: { Rock: "Draw", Paper: "Loss", Scissors: "Win" },
       Paper: { Rock: "Win", Paper: "Draw", Scissors: "Loss" },
       Scissors: { Rock: "Loss", Paper: "Win", Scissors: "Draw" },
     };
-
     if (results[userSelection][cpuSelection] === "Win") {
-      increaseUserScore()
+      setUserScore(userScore + 1)
     }
     if (results[userSelection][cpuSelection] === "Loss") {
-      increaseCpuScore()
+      setCpuScore(cpuScore + 1)
     }
     if (results[userSelection][cpuSelection] === "Draw") {
       console.log("Draw")
     }
+  } else {
+    setTimeout(() => compareSelections(), 100);
   }
-
-  const increaseUserScore = () => {
-    setUserScore(userScore + 1)
-  }
-
-  const increaseCpuScore = () => {
-    setCpuScore(cpuScore + 1)
-  }
+}, [cpuSelection, cpuScore, userScore, userSelection])
 
   return (
     <div className="App">
