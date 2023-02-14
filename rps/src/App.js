@@ -7,8 +7,9 @@ function App() {
   const [hasName, setHasName] = useState("");
   const [userScore, setUserScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
-  const [userSelection, setUserSelection] = useState(null)
-  const [cpuSelection, setCpuSelection] = useState('')
+  const [userSelection, setUserSelection] = useState(null);
+  const [cpuSelection, setCpuSelection] = useState('');
+  const [roundWinner, setRoundWinner] = useState('')
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -36,12 +37,14 @@ function App() {
       };
       if (results[userSelection][cpuSelection] === "Win") {
         setUserScore(userScore + 1);
+        setRoundWinner(`${name} Wins - ${userSelection} beats ${cpuSelection}`)
       }
       if (results[userSelection][cpuSelection] === "Loss") {
         setCpuScore(cpuScore + 1);
+        setRoundWinner(`Computer Wins - ${cpuSelection} beats ${userSelection}`)
       }
       if (results[userSelection][cpuSelection] === "Draw") {
-        console.log("Draw");
+        setRoundWinner("Draw");
       }
       setUserSelection(null);
       setCpuSelection("");
@@ -77,6 +80,7 @@ function App() {
                 <p>Computer</p>
               </div>
             </div>
+            {roundWinner && <p>{roundWinner}</p>}
           </div>
         ) : (
           <>
