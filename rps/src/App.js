@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useCallback} from 'react';
+import React, { useState, useEffect} from 'react';
 
 function App() {
   const [name, setName] = useState("");
@@ -7,7 +7,7 @@ function App() {
   const [hasName, setHasName] = useState("");
   const [userScore, setUserScore] = useState(0);
   const [cpuScore, setCpuScore] = useState(0);
-  const [userSelection, setUserSelection] = useState('')
+  const [userSelection, setUserSelection] = useState(null)
   const [cpuSelection, setCpuSelection] = useState('')
 
   const handleNameChange = (event) => {
@@ -25,48 +25,37 @@ function App() {
 
   const handleUserSelection = (event) => {
     setUserSelection(event.target.textContent)
-    handleCpuSelection()
   }
 
-  /*useEffect(() => {
-    if (userSelection) {
-      handleCpuSelection();
-    }
-  }, [userSelection])*/
-
-  const handleCpuSelection = () => {
-    const options = ["Rock", "Paper", "Scissors"]
-    const randomSelection = options[Math.floor(Math.random() * options.length)]
-    setCpuSelection(randomSelection)
-    compareSelections()
-  }
-
-  /*useEffect(() => {
-    if (cpuSelection) {
-      compareSelections();
-    }
-  }, [cpuSelection])*/
-
-  const compareSelections = useCallback(() => {
+  useEffect(() => {
     if (userSelection && cpuSelection) {
       const results = {
-      Rock: { Rock: "Draw", Paper: "Loss", Scissors: "Win" },
-      Paper: { Rock: "Win", Paper: "Draw", Scissors: "Loss" },
-      Scissors: { Rock: "Loss", Paper: "Win", Scissors: "Draw" },
-    };
-    if (results[userSelection][cpuSelection] === "Win") {
-      setUserScore(userScore + 1)
+        Rock: { Rock: "Draw", Paper: "Loss", Scissors: "Win" },
+        Paper: { Rock: "Win", Paper: "Draw", Scissors: "Loss" },
+        Scissors: { Rock: "Loss", Paper: "Win", Scissors: "Draw" },
+      };
+      if (results[userSelection][cpuSelection] === "Win") {
+        setUserScore(userScore + 1);
+      }
+      if (results[userSelection][cpuSelection] === "Loss") {
+        setCpuScore(cpuScore + 1);
+      }
+      if (results[userSelection][cpuSelection] === "Draw") {
+        console.log("Draw");
+      }
+      setUserSelection(null);
+      setCpuSelection("");
     }
-    if (results[userSelection][cpuSelection] === "Loss") {
-      setCpuScore(cpuScore + 1)
+  }, [userSelection, cpuSelection, userScore, cpuScore]);
+
+  useEffect(() => {
+    if (userSelection && !cpuSelection) {
+      const options = ["Rock", "Paper", "Scissors"];
+      const randomSelection =
+        options[Math.floor(Math.random() * options.length)];
+      setCpuSelection(randomSelection);
     }
-    if (results[userSelection][cpuSelection] === "Draw") {
-      console.log("Draw")
-    }
-  } else {
-    setTimeout(() => compareSelections(), 100);
-  }
-}, [cpuSelection, cpuScore, userScore, userSelection])
+  }, [userSelection, cpuSelection])
 
   return (
     <div className="App">
