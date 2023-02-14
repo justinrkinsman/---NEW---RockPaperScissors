@@ -31,12 +31,12 @@ function App() {
 
   useEffect(() => {
     if (userScore === 5) {
-      setGameWinner('Player')
+      setGameWinner(name)
     }
     if (cpuScore === 5) {
       setGameWinner("Computer")
     }
-  }, [userScore, cpuScore])
+  }, [userScore, cpuScore, name])
 
   useEffect(() => {
     if (userSelection && cpuSelection) {
@@ -73,7 +73,18 @@ function App() {
   return (
     <div className="App">
       <h1>Rock Paper Scissors</h1> {
-        hasName ? (
+        gameWinner ? (
+              <div className='gameWinner'>
+                {gameWinner && <p>{`Game over. ${gameWinner} wins!`}</p>}
+                <p>{`Final Score:`}</p>
+                <div>
+                  <p>{`Player: ${userScore}`}</p>
+                  <p>{`Computer: ${cpuScore}`}</p>
+                </div>
+                <button>New Game</button>
+                <button>Re-enter Name</button>
+              </div>
+            ) : hasName ? (
           <div>
             <p>Welcome {name}</p>
             <p>Choose your weapon</p>
@@ -91,9 +102,6 @@ function App() {
               </div>
             </div>
             {roundWinner && <p>{roundWinner}</p>}
-            <div className='gameWinner'>
-              {<p></p>}
-            </div>
           </div>
         ) : (
           <>
