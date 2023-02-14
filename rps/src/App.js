@@ -9,7 +9,8 @@ function App() {
   const [cpuScore, setCpuScore] = useState(0);
   const [userSelection, setUserSelection] = useState(null);
   const [cpuSelection, setCpuSelection] = useState('');
-  const [roundWinner, setRoundWinner] = useState('')
+  const [roundWinner, setRoundWinner] = useState('');
+  const [gameWinner, setGameWinner] = useState('');
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -27,6 +28,15 @@ function App() {
   const handleUserSelection = (event) => {
     setUserSelection(event.target.textContent)
   }
+
+  useEffect(() => {
+    if (userScore === 5) {
+      setGameWinner('Player')
+    }
+    if (cpuScore === 5) {
+      setGameWinner("Computer")
+    }
+  }, [userScore, cpuScore])
 
   useEffect(() => {
     if (userSelection && cpuSelection) {
@@ -49,7 +59,7 @@ function App() {
       setUserSelection(null);
       setCpuSelection("");
     }
-  }, [userSelection, cpuSelection, userScore, cpuScore]);
+  }, [userSelection, cpuSelection, userScore, cpuScore, name]);
 
   useEffect(() => {
     if (userSelection && !cpuSelection) {
@@ -81,6 +91,9 @@ function App() {
               </div>
             </div>
             {roundWinner && <p>{roundWinner}</p>}
+            <div className='gameWinner'>
+              {<p></p>}
+            </div>
           </div>
         ) : (
           <>
