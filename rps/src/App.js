@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect} from 'react';
 import GameOver from './GameOverScreen';
+import GameScreen from './GameScreen'
 
 function App() {
   const [name, setName] = useState("");
@@ -77,24 +78,7 @@ function App() {
         gameWinner && cpuScore && userScore ? (
               <GameOver gameWinner={gameWinner} cpuScore={cpuScore} userScore={userScore}/>
             ) : hasName ? (
-          <div>
-            <p>Welcome {name}</p>
-            <p>Choose your weapon</p>
-            <button onClick={handleUserSelection}>Rock</button>
-            <button onClick={handleUserSelection}>Paper</button>
-            <button onClick={handleUserSelection}>Scissors</button>
-            <div className='scoreboard'>
-              <div className="player1">
-                <p>{name}</p>
-                <p>- {userScore}</p>
-              </div>
-              <div className='cpu-player'>
-                <p>{cpuScore} -</p>
-                <p>Computer</p>
-              </div>
-            </div>
-            {roundWinner && <p>{roundWinner}</p>}
-          </div>
+              <GameScreen handleUserSelection={handleUserSelection} name={name} userScore={userScore} cpuScore={cpuScore} roundWinner={roundWinner}/>
         ) : (
           <>
             <form className='name-form'>
