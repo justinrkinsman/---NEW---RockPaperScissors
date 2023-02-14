@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect} from 'react';
+import GameOver from './GameOverScreen';
 
 function App() {
   const [name, setName] = useState("");
@@ -73,17 +74,8 @@ function App() {
   return (
     <div className="App">
       <h1>Rock Paper Scissors</h1> {
-        gameWinner ? (
-              <div className='gameWinner'>
-                {gameWinner && <p>{`Game over. ${gameWinner} wins!`}</p>}
-                <p>{`Final Score:`}</p>
-                <div>
-                  <p>{`Player: ${userScore}`}</p>
-                  <p>{`Computer: ${cpuScore}`}</p>
-                </div>
-                <button>New Game</button>
-                <button>Re-enter Name</button>
-              </div>
+        gameWinner && cpuScore && userScore ? (
+              <GameOver gameWinner={gameWinner} cpuScore={cpuScore} userScore={userScore}/>
             ) : hasName ? (
           <div>
             <p>Welcome {name}</p>
