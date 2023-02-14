@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect} from 'react';
 import GameOver from './GameOverScreen';
 import GameScreen from './GameScreen'
+import NameEntry from './NameEntry'
 
 function App() {
   const [name, setName] = useState("");
@@ -80,16 +81,9 @@ function App() {
             ) : hasName ? (
               <GameScreen handleUserSelection={handleUserSelection} name={name} userScore={userScore} cpuScore={cpuScore} roundWinner={roundWinner}/>
         ) : (
-          <>
-            <form className='name-form'>
-              <label htmlFor="name">Enter your name </label>
-              <input id="name" type="text" value={name} onChange={handleNameChange}/>
-            </form>
-            <button onClick={checkForName}>Start</button>
-          </>
+          <NameEntry name={name} handleNameChange={handleNameChange} checkForName={checkForName} errorMessage={errorMessage} />
         )
       } 
-      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }
