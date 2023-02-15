@@ -63,7 +63,7 @@ function App() {
       if (results[userSelection][cpuSelection] === "Draw") {
         setRoundWinner("Draw");
       }
-      setUserSelection(null);
+      setUserSelection("");
       setCpuSelection("");
     }
   }, [userSelection, cpuSelection, userScore, cpuScore, name]);
