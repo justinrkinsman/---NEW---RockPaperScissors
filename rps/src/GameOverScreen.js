@@ -2,19 +2,19 @@ import React from 'react';
 
 function GameOver(props) {
     function resetGame() {
-        props.setUserScore(0)
-        props.setCpuScore(0)
-        props.setGameWinner("")
-        props.setRoundWinner("")
+        props.gameSettings.setUserScore(0)
+        props.gameSettings.setCpuScore(0)
+        props.gameSettings.setGameWinner("")
+        props.gameSettings.setRoundWinner("")
     }
 
     function returnToNameEntryScreen() {
-        props.setName("")
-        props.setHasName(false)
-        props.setUserScore(0)
-        props.setCpuScore(0)
-        props.setGameWinner("")
-        props.setRoundWinner("")
+        props.gameSettings.setName("")
+        props.gameSettings.setHasName(false)
+        props.gameSettings.setUserScore(0)
+        props.gameSettings.setCpuScore(0)
+        props.gameSettings.setGameWinner("")
+        props.gameSettings.setRoundWinner("")
     }
 
     return (
