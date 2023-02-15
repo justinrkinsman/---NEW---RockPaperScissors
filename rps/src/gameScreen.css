@@ -1,0 +1,69 @@
+.slide-in-one {
+    animation: 2s ease-in-out 0s 1 slideInFromRight;
+    animation-delay: 0.5s;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-body {
+    animation: 2.5s 0s 1 fadeAway;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeAway {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    15% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0.0
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(200%);
+        opacity: 1;
+        background-color: red;
+        height: 60vh;
+        width: 100vw;
+    }
+    30% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: red;
+        height: 60vh;
+        width: 100vw;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: red;
+        height: 60vh;
+        width: 100vw;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: red;
+        height: 60vh;
+        width: 100vw;
+    }
+    100% {
+        transform: translateX(-200%);
+        opacity: 1;
+        background-color: red;
+        height: 50vh;
+        width: 100vw;
+    }
+}

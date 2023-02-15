@@ -54,3 +54,7 @@ button:hover {
 .scoreboard {
   justify-content: space-around;
 }
+
+body {
+  overflow: hidden;
+}
