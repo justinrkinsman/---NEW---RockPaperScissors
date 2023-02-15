@@ -77,7 +77,7 @@ function App() {
     <div className="App">
       <h1>Rock Paper Scissors</h1> {
         gameWinner && cpuScore && userScore ? (
-              <GameOver gameWinner={gameWinner} cpuScore={cpuScore} userScore={userScore}/>
+              <GameOver gameWinner={gameWinner} cpuScore={cpuScore} userScore={userScore} setCpuScore={setCpuScore} setUserScore={setUserScore} setName={setName} setHasName={setHasName} setGameWinner={setGameWinner} setRoundWinner={setRoundWinner}/>
             ) : hasName ? (
               <GameScreen handleUserSelection={handleUserSelection} name={name} userScore={userScore} cpuScore={cpuScore} roundWinner={roundWinner}/>
         ) : (
