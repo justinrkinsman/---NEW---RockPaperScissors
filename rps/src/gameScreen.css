@@ -13,6 +13,11 @@
     animation-fill-mode: forwards;
 }
 
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 @keyframes fadeAway {
     0% {
         opacity: 1;

@@ -9,9 +9,11 @@ function GameScreen(props) {
               <img src="https://see.fontimg.com/api/renderfont4/aoWm/eyJyIjoiZnMiLCJoIjo1MywidyI6MTAwMCwiZnMiOjUzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiIzgyOEMzMCIsInQiOjF9/Q2hvb3NlIFlvdXIgV2VhcG9u/boss-fight.png" alt="Boss fonts"></img>
             </div>
             <div class="game-body">
-              <button onClick={props.handleUserSelection}>Rock</button>
-              <button onClick={props.handleUserSelection}>Paper</button>
-              <button onClick={props.handleUserSelection}>Scissors</button>
+              <div className="buttons">
+                <button onClick={props.handleUserSelection}>Rock</button>
+                <button onClick={props.handleUserSelection}>Paper</button>
+                <button onClick={props.handleUserSelection}>Scissors</button>
+              </div>
               <div className='scoreboard'>
                 <div className="player1">
                   <p>{props.name}</p>
