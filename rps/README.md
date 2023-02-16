@@ -4,10 +4,7 @@ livepreview: https://justinrkinsman.github.io/RockPaperScissorsN-I/
 
 # Introduction
 
----PLEASE NOTE---
-This project is currently being worked on and is not full functional yet.
-
-This Rock, Paper, Scissors game was one of the first projects I attempted to build. I initially built a very rudimentary version that was mostly text-based. I came back nearly a year later with the intention of making it look more profesisonal and showcasing off my CSS skills.
+This Rock, Paper, Scissors game was one of the first projects I attempted to build. I initially built a very rudimentary version that was mostly text-based. I came back nearly a year later with the intention of making it look more professional and showcasing my CSS skills.
 
 # How to play
 
@@ -21,11 +18,11 @@ PAPER beats ROCK
 ROCK beats SCISSORS  
 SCISSORS beats ROCK
 
-If your guess beats the computer's guess, you win. First to win five rounds wins the game.
+If your guess beats the computer's guess, you win. First to win five rounds wins the game. You will then be able to choose between starting a new game and resetting the scores to 0, or entering a new name.
 
 # Features
 
-The front-end of this project was built using React. I used state hook to render the page using a single component rather than have to make multiple files each with different components and functions. The intention of the project is to showcase my design skills moreso than my coding prowess.
+The front-end of this project was built using React. The intention of the project is to showcase my design skills more so than my coding prowess and was mostly meant as a fun refresher on CSS for me.
 
 # Running the game
 
