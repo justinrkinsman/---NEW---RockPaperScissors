@@ -37,4 +37,4 @@ Thanks for playing, and for reading!
 
 # Contributing
 
-If you want to report bugs on the this project, or contact me with any questions regarding this project, you can DM me here or send me an email at justinrkinsman@gmail.com
+If you want to report bugs on the this project, or contact me with any questions regarding this project, you can DM me here or send email me at justinrkinsman@gmail.com
