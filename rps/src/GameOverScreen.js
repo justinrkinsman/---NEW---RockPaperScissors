@@ -25,7 +25,7 @@ function GameOver(props) {
                 </div>
             ) : (
                 <div className="winner">
-                    <p>You Win!</p>
+                    <img src="https://see.fontimg.com/api/renderfont4/aoWm/eyJyIjoiZnMiLCJoIjo1MywidyI6MTAwMCwiZnMiOjUzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiIzgyOEMzMCIsInQiOjF9/WW91IFdpbiE/boss-fight.png" alt='game win text'/>
                 </div>
             )}
             <p>{`Final Score:`}</p>
