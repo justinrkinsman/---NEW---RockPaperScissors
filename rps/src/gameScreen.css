@@ -73,3 +73,15 @@ button {
         width: 100vw;
     }
 }
+
+.winner {
+    background-color: green;
+    height: 50vh;
+    width: 100vw;
+}
+
+.loser {
+    background-color: red;
+    height: 50vh;
+    width: 100vw;   
+}

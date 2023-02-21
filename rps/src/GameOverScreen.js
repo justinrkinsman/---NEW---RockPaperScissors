@@ -20,9 +20,13 @@ function GameOver(props) {
     return (
         <div className='gameWinner'>
             {props.gameWinner === "Computer" ? (
-                <p>You're a lose</p>
+                <div className="loser">
+                    <p>You Lose!</p>
+                </div>
             ) : (
-                <p>Your Winner</p>
+                <div className="winner">
+                    <p>You Win!</p>
+                </div>
             )}
             <p>{`Final Score:`}</p>
             <div>
