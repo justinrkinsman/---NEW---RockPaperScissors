@@ -21,7 +21,7 @@ function GameOver(props) {
         <div className='gameWinner'>
             {props.gameWinner === "Computer" ? (
                 <div className="loser">
-                    <p>You Lose!</p>
+                    <img src="https://see.fontimg.com/api/renderfont4/aoWm/eyJyIjoiZnMiLCJoIjo1MywidyI6MTAwMCwiZnMiOjUzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiIzgyOEMzMCIsInQiOjF9/WW91IExvc2Uh/boss-fight.png" alt="Boss fonts" />
                 </div>
             ) : (
                 <div className="winner">
